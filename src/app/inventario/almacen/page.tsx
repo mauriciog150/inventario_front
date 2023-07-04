@@ -6,8 +6,8 @@ const Listadoalmacen = () => {
     return (
     <>
     <div className='grow '>
-        <Toolbar pathForm='inventario/almacen/0' pathList='inventario/almacen/' currentEntity={""} entityName='almacen'/>
-        <p className='text-center text-black'>Listado <span className='text-primary'>de almacens</span></p>
+        <Toolbar pathForm='almacen/0' pathList='inventario/almacen/' currentEntity={""} entityName='almacen'/>
+        <p className='text-center text-black'>Listado <span className='text-primary'>de almacen</span></p>
         <div className='overflow-x-auto'>
         <table className='table table-xs table-pin-rows table-pin-cols w-5/6 mx-auto'>
             <Head columnas={["","Nombre Almacen","Direccion Almacen","Capacidad Almacen"]}/>

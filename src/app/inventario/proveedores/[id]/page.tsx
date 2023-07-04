@@ -52,7 +52,7 @@ const Page = ({ params }: { params: { id: string } })  => {
             if (error) {
                 console.log(error);
             } else {
-                router.push("inventario/"+endpoint+"/"+ data.id)
+                router.push(endpoint+"/")
             }
         } catch (e) {
             console.log("Post error:");

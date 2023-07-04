@@ -4,7 +4,6 @@ import useBasicAuth from '@/hooks/useBasicAuth';
 import Cookies from 'js-cookie';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 
 export const LoginForm = () => {
@@ -16,7 +15,7 @@ export const LoginForm = () => {
         console.log("ingreso en el submit")
         const { bearerToken } = await useBasicAuth(getValues("user"), getValues("password"));
         Cookies.set("token",bearerToken);
-        router.push("/inventario/cliente")
+        router.push("/inventario/producto")
   }
 
  return (
@@ -24,7 +23,7 @@ export const LoginForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
         <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text">Usuario</span>
         </label>
         <input 
             type="text" 
@@ -35,7 +34,7 @@ export const LoginForm = () => {
         </div>
         <div className="form-control">
         <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text">Contraseña</span>
         </label>
         <input 
             type="password" 
@@ -44,7 +43,7 @@ export const LoginForm = () => {
             {...register("password")}
         />
         <label className="label">
-            <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
+            <Link href="#" className="label-text-alt link link-hover">¿Has olvidado tu contraseña?</Link>
         </label>
         </div>
         <div className="form-control mt-6">

@@ -6,7 +6,7 @@ const Listadociudad = () => {
     return (
     <>
     <div className='grow '>
-        <Toolbar pathForm='inventario/ciudad/0' pathList='inventario/ciudad/' currentEntity={""} entityName='ciudad'/>
+        <Toolbar pathForm='ciudad/0' pathList='inventario/ciudad/' currentEntity={""} entityName='ciudad'/>
         <p className='text-center text-black'>Listado <span className='text-primary'>de ciudads</span></p>
         <div className='overflow-x-auto'>
         <table className='table table-xs table-pin-rows table-pin-cols w-5/6 mx-auto'>

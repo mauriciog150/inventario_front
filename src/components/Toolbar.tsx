@@ -33,7 +33,7 @@ export const Toolbar: FC<Props> = ({
               </svg>
               <span className="hidden md:inline">
               
-                Nuevo
+                Agregar
               
               </span>
           </button>

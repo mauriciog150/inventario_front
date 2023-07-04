@@ -54,7 +54,7 @@ const Page = ({ params }: { params: { id: string } })  => {
             if (error) {
                 console.log(error);
             } else {
-                router.push("inventario/"+endpoint+"/"+ data.id)
+                router.push(endpoint+"/")
             }
         } catch (e) {
             console.log("Post error:");
@@ -70,7 +70,7 @@ const Page = ({ params }: { params: { id: string } })  => {
     return (
     <>
         <div className='grow '>
-        <Toolbar pathForm='inventario/almacen/0' pathList='inventario/almacen/' currentEntity={getValues("nombreAlmacen")} entityName='almacen'/>
+        <Toolbar pathForm='almacen/0' pathList='inventario/almacen/' currentEntity={getValues("nombreAlmacen")} entityName='almacen'/>
         <div className='h-96 w-4/6 mx-auto p-4 border-solid border-gray-300 border-2 rounded-xl  '>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Input id='id' label='' register={register} type='hidden'/>

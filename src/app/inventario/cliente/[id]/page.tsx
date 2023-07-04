@@ -12,12 +12,12 @@ const Page = ({ params }: { params: { id: string } })  => {
 
     const router = useRouter();
     const entityId =params.id;
-    const [cliente, setCliente] = useState({
+    const [cliente, setcliente] = useState({
         id: 0,
         cedula: '',
         nombre: '',
         direccion: '',
-        correo_electronico: ''
+        correoElectronico: ''
     });
     const { register, setValue,getValues,handleSubmit, formState: { errors }  } = useForm(
         {
@@ -30,7 +30,7 @@ const Page = ({ params }: { params: { id: string } })  => {
     const getInitData = async () => {
         if (!entityId || entityId=="0")
             return;
-        const { data, error } = await useFetchWithAuth("inventario/" + entityId);
+        const { data, error } = await useFetchWithAuth("cliente/" + entityId);
         
         if (!error) {
             
@@ -39,8 +39,8 @@ const Page = ({ params }: { params: { id: string } })  => {
                 setValue("cedula", data['cedula'])
                 setValue("nombre", data['nombre'])
                 setValue("direccion", data['direccion'])
-                setValue("correo_electronico", data['correo_electronico'])
-                setCliente(data)
+                setValue("correoElectronico", data['correoElectronico'])
+                setcliente(data)
             }
 
         } else {
@@ -56,7 +56,7 @@ const Page = ({ params }: { params: { id: string } })  => {
             if (error) {
                 console.log(error);
             } else {
-                router.push("inventario/"+endpoint+"/"+ data.id)
+                router.push(endpoint+"/")
             }
         } catch (e) {
             console.log("Post error:");
@@ -72,20 +72,19 @@ const Page = ({ params }: { params: { id: string } })  => {
     return (
     <>
         <div className='grow '>
-        <Toolbar pathForm='inventario/cliente/0' pathList='inventario/cliente/' currentEntity={getValues("nombre")} entityName='cliente'/>
+        <Toolbar pathForm='cliente/0' pathList='inventario/cliente/' currentEntity={getValues("nombre")} entityName='cliente'/>
         <div className='h-96 w-4/6 mx-auto p-4 border-solid border-gray-300 border-2 rounded-xl  '>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Input id='id' label='' register={register} type='hidden'/>
-                <Input id='cedula' label='Cédula' register={register} type='text'/>
-                <Input id='nombre' label='Nombre' register={register} type='text'/>
-                <Input id='direccion' label='Dirección' register={register} type='text'/>
-                <Input id='correo_electronico' label='Correo Electronico' register={register} type='text'/>
+                <Input id='cedula' label='' register={register} type='text'/>
+                <Input id='nombre' label='' register={register} type='text'/>
+                <Input id='direccion' label='' register={register} type='text'/>
+                <Input id='correoElectronico' label='' register={register} type='text'/>
                 <Button className="btn-sm my-2" type='submit' label='Guardar' />
                 {errors?.root?.server && <p>Form submit failed.</p>}
             </form>            
         </div>
         </div>
-
     </>
     )
 }

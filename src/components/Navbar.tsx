@@ -24,7 +24,7 @@ const name:FC <Props> = () => {
    <>
         <div className="navbar bg-base-100">
             <div className="flex-1">
-                <Link href={"/inventario"} className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                <Link href={"/inventario"} className="btn btn-ghost normal-case text-xl">Sistema de Inventario</Link>
             </div>
             <div className="flex-none gap-2">
                 <div className="form-control">
@@ -37,9 +37,9 @@ const name:FC <Props> = () => {
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                        <li>Settings</li>
+                        <li>Ajustes</li>
                         <li>
-                            <Button label='LogOut' onClick={()=>logout()}/>
+                            <Button label='Salir' onClick={()=>logout()}/>
                         </li>
                     </ul>
                 </div>
